@@ -17,7 +17,8 @@ public class BidirectionalPipelineBuilder<TFirstInput, TLastOutput, TNextInput>
     }
 
     public IBidirectionalPipelineBuilder<TFirstInput, TLastOutput, TOutput> AddStep<TOutput>(
-        Func<TNextInput, TOutput> input)
+        Func<TNextInput, TOutput> input
+    )
     {
         _pipelineStepList.Add(childInput => Task.FromResult((object)input((TNextInput)childInput)!));
         return new BidirectionalPipelineBuilder<TFirstInput, TLastOutput, TOutput>(_pipelineStepList);
