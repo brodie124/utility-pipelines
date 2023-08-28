@@ -26,6 +26,9 @@ public class BidirectionalPipelineBuilder<TFirstInput, TLastOutput, TNextInput>
 
     public IBidirectionalPipeline<TFirstInput, TLastOutput> CreatePipeline()
     {
+        if (typeof(TNextInput) != typeof(TLastOutput))
+            throw new InvalidOperationException("The final step of the pipeline does not return the correct type");
+
         return new BidirectionalPipeline<TFirstInput, TLastOutput>(_pipelineStepList);
     }
 }

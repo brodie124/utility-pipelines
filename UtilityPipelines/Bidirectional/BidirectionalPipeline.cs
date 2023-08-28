@@ -6,7 +6,7 @@ public interface IBidirectionalPipeline<TInput, TOutput>
     public TOutput Execute(TInput input);
 }
 
-public class BidirectionalPipeline<TFirstInput, TFirstOutput> : IBidirectionalPipeline<TFirstInput, TFirstOutput>
+public class BidirectionalPipeline<TFirstInput, TLastOutput> : IBidirectionalPipeline<TFirstInput, TLastOutput>
 {
     private readonly ICollection<Func<object, Task<object>>> _pipelineSteps;
 
@@ -15,7 +15,7 @@ public class BidirectionalPipeline<TFirstInput, TFirstOutput> : IBidirectionalPi
         _pipelineSteps = pipelineSteps;
     }
 
-    public async Task<TFirstOutput> ExecuteAsync(TFirstInput input)
+    public async Task<TLastOutput> ExecuteAsync(TFirstInput input)
     {
         var nextInput = input as object;
         foreach (var stepFunc in _pipelineSteps)
@@ -23,10 +23,10 @@ public class BidirectionalPipeline<TFirstInput, TFirstOutput> : IBidirectionalPi
             nextInput = await stepFunc.Invoke(nextInput!);
         }
 
-        return (TFirstOutput)nextInput!;
+        return (TLastOutput)nextInput!;
     }
     
-    public TFirstOutput Execute(TFirstInput input)
+    public TLastOutput Execute(TFirstInput input)
     {
         return ExecuteAsync(input).Result;
     }
