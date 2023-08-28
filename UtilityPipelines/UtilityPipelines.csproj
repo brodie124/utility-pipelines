@@ -10,6 +10,7 @@
         <Authors>Brodie Pestell</Authors>
         <Description>UtilityPipelines provides a generic, sequential pipeline builder for step-based operations.</Description>
         <PackageTags>utility, library, pipeline</PackageTags>
+        <PackageVersion>1.0</PackageVersion>
     </PropertyGroup>
     <PropertyGroup>
         <PackageReadmeFile>README.md</PackageReadmeFile>
