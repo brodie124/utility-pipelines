@@ -4,6 +4,14 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <Authors>Brodie Pestell</Authors>
+        <Description>UtilityPipelines provides a generic, sequential pipeline builder for step-based operations.</Description>
+        <PackageTags>utility, library, pipeline</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
 </Project>

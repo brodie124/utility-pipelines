@@ -56,4 +56,13 @@ public class BidirectionalPipelineTests
         var actualOutput = pipeline.Execute(inputCelcius);
         Assert.Equal(expectedOutputFarenheit, actualOutput);
     }
+    
+    [Fact]
+    public void BidirectionalPipeline_FinalStepReturnsInvalidType_CreatePipelineThrowsException()
+    {
+        var pipelineBuilder = new BidirectionalPipelineBuilder<int, int>()
+            .AddStep(x => $"£{x}");
+
+        Assert.Throws<InvalidOperationException>(() => pipelineBuilder.CreatePipeline());
+    }
 }
