@@ -9,7 +9,8 @@
     <PropertyGroup>
         <Authors>Brodie Pestell</Authors>
         <Description>UtilityPipelines provides a generic, sequential pipeline builder for step-based operations.</Description>
-        <PackageTags>utility, library, pipeline</PackageTags>
+        <PackageTags>utility, library, pipeline, design pattern</PackageTags>
+        <RepositoryUrl>https://github.com/brodie124/utility-pipelines</RepositoryUrl>
     </PropertyGroup>
     <PropertyGroup>
         <PackageReadmeFile>README.md</PackageReadmeFile>
