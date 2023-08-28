@@ -11,7 +11,7 @@
         <Description>UtilityPipelines provides a generic, sequential pipeline builder for step-based operations.</Description>
         <PackageTags>utility, library, pipeline</PackageTags>
     </PropertyGroup>
-<!--    <PropertyGroup>-->
-<!--        <PackageReadmeFile>README.md</PackageReadmeFile>-->
-<!--    </PropertyGroup>-->
+    <PropertyGroup>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
 </Project>
